@@ -1,4 +1,4 @@
-import { validate } from "./validator.js";
+import { validate } from "./index.js";
 
 const path = "/";
 const extensionsStr = ".xml, valid";
