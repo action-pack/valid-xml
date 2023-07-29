@@ -67,6 +67,14 @@ export async function validate(path, extensionsStr) {
 try {
   const path = getInput("path");
   const fileEndingsStr = getInput("file-endings");
+  info(
+    "Running nodeJS " +
+      process.version +
+      ". path=" +
+      path +
+      ", file-endings=" +
+      fileEndingsStr
+  );
 
   const result = await validate(path, fileEndingsStr);
 
