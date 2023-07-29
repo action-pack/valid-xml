@@ -23,7 +23,7 @@ export async function validate(path, extensionsStr) {
   let fileCount = 0;
   let outErrorStr = "";
 
-  while (path.charAt(0) === "/") {
+  if (path && path.charAt(0) === "/") {
     path = path.substring(1);
   }
 
