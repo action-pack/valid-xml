@@ -1,15 +1,15 @@
-name: "Verify XML syntax"
-description: "Verify XML syntax"
+name: "Verify XML Action"
+description: "Action to verify XML files. Files are found within a directory and subdirectories with matching file endings."
 inputs:
   path:
     description: "path to scan"
     default: "/"
   file-endings:
-    description: "Comma-separated file endings that are treated as XML files. Capitalization is ignored"
+    description: "Comma-separated file endings that are checked to be valid XML files. Capitalization is ignored."
     default: ".xml"
 outputs:
   result:
-    description: "Error message or success message"
+    description: "Error message with file name, line, column and error. Or a success message with the count of verified files."
 runs:
   using: "node16"
   main: "index.js"
