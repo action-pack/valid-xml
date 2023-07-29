@@ -5,12 +5,20 @@ import * as paths from "path";
 
 async function walk(dir) {
   let files = fs.readdirSync(dir, { withFileTypes: true });
+  info("directory: " + dir + ", files: " + JSON.stringify(files));
   files = await Promise.all(
     files.map(async (dirEnt) => {
-      info(JSON.stringify(dirEnt));
       const filePath = paths.join(dirEnt.path, dirEnt.name);
-      if (dirEnt.isDirectory()) return walk(filePath);
-      else if (dirEnt.isFile()) return filePath;
+      info("filePath: " + filePath);
+      if (dirEnt.isDirectory()) {
+        info("found directory: " + filePath);
+        return walk(filePath);
+      } else {
+        if (dirEnt.isFile()) {
+          info("found file: " + filePath);
+          return filePath;
+        }
+      }
     })
   );
   return files.reduce((all, folderContents) => all.concat(folderContents), []);
