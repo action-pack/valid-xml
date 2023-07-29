@@ -82,7 +82,7 @@ try {
     setOutput("result", result.outErrorStr);
     setFailed(result.outErrorStr);
   } else {
-    setOutput("result", `Successfully validated ${fileCount} files.`);
+    setOutput("result", `Successfully validated ${result.fileCount} files.`);
   }
 } catch (error) {
   setFailed(error.message);
