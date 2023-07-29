@@ -1,13 +1,14 @@
-import { getInput, setOutput, setFailed } from "@actions/core";
+import { getInput, setOutput, setFailed, info } from "@actions/core";
 import { XMLValidator } from "fast-xml-parser";
 import * as fs from "fs";
-import * as path from "path";
+import * as paths from "path";
 
 async function walk(dir) {
   let files = fs.readdirSync(dir, { withFileTypes: true });
   files = await Promise.all(
     files.map(async (dirEnt) => {
-      const filePath = path.join(dirEnt.path, dirEnt.name);
+      info(JSON.stringify(dirEnt));
+      const filePath = paths.join(dirEnt.path, dirEnt.name);
       if (dirEnt.isDirectory()) return walk(filePath);
       else if (dirEnt.isFile()) return filePath;
     })
@@ -47,7 +48,7 @@ export async function validate(path, extensionsStr) {
           return false;
         }
         ++fileCount;
-        console.log("validated " + file);
+        info("validated " + file);
         return true;
       })
   );
