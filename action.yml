@@ -1,6 +1,8 @@
 name: "Verify XML Action"
 description: "Action to verify XML files. Files are found within a directory and subdirectories with matching file endings."
-icon: check-circle
+branding:
+  icon: 'check-circle'
+  color: 'pink'
 inputs:
   path:
     description: "path to scan"
