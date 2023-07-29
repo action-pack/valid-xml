@@ -5,17 +5,13 @@ import * as paths from "path";
 
 async function walk(dir) {
   let files = fs.readdirSync(dir, { withFileTypes: true });
-  info("directory: " + dir + ", files: " + JSON.stringify(files));
   files = await Promise.all(
     files.map(async (dirEnt) => {
       const filePath = paths.join(dir, dirEnt.name); // dirEnt.path does not yet exist in nodejs 16.16.0
-      info("filePath: " + filePath);
       if (dirEnt.isDirectory()) {
-        info("found directory: " + filePath);
         return walk(filePath);
       } else {
         if (dirEnt.isFile()) {
-          info("found file: " + filePath);
           return filePath;
         }
       }
