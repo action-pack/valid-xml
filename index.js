@@ -8,7 +8,7 @@ async function walk(dir) {
   info("directory: " + dir + ", files: " + JSON.stringify(files));
   files = await Promise.all(
     files.map(async (dirEnt) => {
-      const filePath = paths.join(dirEnt.path, dirEnt.name);
+      const filePath = paths.join(dir, dirEnt.name); // dirEnt.path does not yet exist in nodejs 16.16.0
       info("filePath: " + filePath);
       if (dirEnt.isDirectory()) {
         info("found directory: " + filePath);
