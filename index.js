@@ -23,7 +23,11 @@ export async function validate(path, extensionsStr) {
   let fileCount = 0;
   let outErrorStr = "";
 
-  await walk("." + (path || "/")).then((files) =>
+  while (path.charAt(0) === "/") {
+    path = path.substring(1);
+  }
+
+  await walk("./" + (path || "/")).then((files) =>
     files
       .filter((entry) => {
         const filenameCaps = entry.toLocaleUpperCase();
