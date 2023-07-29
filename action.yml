@@ -1,0 +1,15 @@
+name: "Verify XML syntax"
+description: "Verify XML syntax"
+inputs:
+  path:
+    description: "path to scan"
+    default: "/"
+  file-endings:
+    description: "Comma-separated file endings that are treated as XML files. Capitalization is ignored"
+    default: ".xml"
+outputs:
+  result:
+    description: "Error message or success message"
+runs:
+  using: "node16"
+  main: "index.js"
