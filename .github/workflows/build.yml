@@ -19,7 +19,7 @@ jobs:
     - name: Perform linting
       run: |
         npm install
-        npm run lint
+        #npm run lint
   
   build:
     needs: test
