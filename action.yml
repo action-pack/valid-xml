@@ -1,6 +1,6 @@
 name: "Valid XML"
 author: "action-pack"
-description: "Action to verify the syntax of XML files."
+description: "Action to validate the syntax of XML files."
 branding:
   icon: "check-circle"
   color: "gray-dark"
