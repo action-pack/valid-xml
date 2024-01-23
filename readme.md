@@ -7,9 +7,7 @@
   
 </div></h1>
 
-This action scans a directory and its subdirectories for files with a specified file name ending and parses the file as XML.
-
-If it fails, the error message is output.
+Action to validate the syntax of XML files.
 
 ## Usage
 
