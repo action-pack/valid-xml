@@ -35,3 +35,6 @@ Entries need to be separated by "," and whitespaces are trimmed. Capitalization 
 ### `result`
 
 A string containing either an error message of the first file that could not be parsed or a success message with the amount of successfully scanned files.
+
+## Stars
+[![Stars](https://starchart.cc/action-pack/valid-xml.svg?variant=adaptive)](https://starchart.cc/action-pack/valid-xml)
