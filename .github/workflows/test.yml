@@ -1,0 +1,15 @@
+name: Test
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: action-pack/valid-xml@v1
+        with:
+          path: "test"
+          file-endings: ".xml"
