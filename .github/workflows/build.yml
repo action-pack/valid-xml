@@ -72,6 +72,7 @@ jobs:
         name: Clean files
         run: |
           rm .gitignore
+          rm -Rf test
           rm -f renovate.json
           rm -Rf node_modules/
           rm -Rf .github
