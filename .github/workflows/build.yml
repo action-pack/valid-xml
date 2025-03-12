@@ -96,7 +96,7 @@ jobs:
           commit: "release/v${{ vars.MAJOR }}.${{ vars.MINOR }}"
           body: |
             ${{ steps.changelog.outputs.changes }}
-            token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
       -
         name: Update major release
         uses: action-pack/github-release@v2
