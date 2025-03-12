@@ -3,7 +3,7 @@
   
   [![Build](https://github.com/action-pack/valid-xml/actions/workflows/build.yml/badge.svg)](https://github.com/action-pack/valid-xml/)
   [![Version](https://img.shields.io/github/v/tag/action-pack/valid-xml?label=version&sort=semver&color=066da5)](https://github.com/marketplace/actions/valid-xml)
-  [![Size](https://img.shields.io/github/size/action-pack/valid-xml/dist/index.js?branch=release/v1.02&label=size&color=066da5)](https://github.com/action-pack/valid-xml/)
+  [![Size](https://img.shields.io/github/size/action-pack/valid-xml/dist/index.js?branch=release/v1.06&label=size&color=066da5)](https://github.com/action-pack/valid-xml/)
   
 </div></h1>
 
