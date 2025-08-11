@@ -1,7 +1,7 @@
 {
   "name": "valid-xml",
   "private": true,  
-  "version": "0.0.0-development",
+  "version": "1.08",
   "license": "MIT License",
   "repository": "https://github.com/action-pack/valid-xml",
   "scripts": {
