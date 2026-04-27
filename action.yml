@@ -18,5 +18,5 @@ outputs:
     description: "Error message with file name, line, column and error. Or a success message with the count of verified files."
 
 runs:
-  using: node20
+  using: node24
   main: dist/index.js
