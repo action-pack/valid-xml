@@ -37,4 +37,4 @@ Entries need to be separated by "," and whitespaces are trimmed. Capitalization 
 A string containing either an error message of the first file that could not be parsed or a success message with the amount of successfully scanned files.
 
 ## Stars 🌟
-![Stargazers](https://raw.githubusercontent.com/star-stats/stars/refs/heads/data/charts/action-pack-valid-xml.svg)
+[![Stargazers](https://raw.githubusercontent.com/star-stats/stars/refs/heads/data/charts/action-pack-valid-xml.svg)](https://github.com/action-pack/valid-xml/stargazers)
