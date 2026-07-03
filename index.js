@@ -5,18 +5,23 @@ import * as paths from "path";
 
 async function walk(dir) {
   let files = fs.readdirSync(dir, { withFileTypes: true });
+
   files = await Promise.all(
     files.map(async (dirEnt) => {
       const filePath = paths.join(dir, dirEnt.name); // dirEnt.path does not yet exist in nodejs 16.16.0
+
       if (dirEnt.isDirectory()) {
         return walk(filePath);
-      } else {
-        if (dirEnt.isFile()) {
-          return filePath;
-        }
       }
+
+      if (dirEnt.isFile()) {
+        return filePath;
+      }
+
+      return [];
     })
   );
+
   return files.reduce((all, folderContents) => all.concat(folderContents), []);
 }
 
@@ -48,7 +53,7 @@ export async function validate(path, extensionsStr) {
           allowBooleanAttributes: false,
         });
         if (result !== true) {
-          outErrorStr = `file '${file}', colum ${result.err.col}, line ${result.err.line}: ${result.err.code} - ${result.err.msg}`;
+          outErrorStr = `file '${file}', column ${result.err.col}, line ${result.err.line}: ${result.err.code} - ${result.err.msg}`;
           return false;
         }
         ++fileCount;
